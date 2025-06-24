@@ -7,7 +7,7 @@ import ParticleBackground from '../components/ParticleBackground';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
       <ParticleBackground />
       <Header />
       <Hero />

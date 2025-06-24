@@ -8,7 +8,7 @@ import ParticleBackground from '../components/ParticleBackground';
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-green-900 to-slate-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50 to-blue-100 relative overflow-hidden">
       <ParticleBackground />
       <Header />
       <ContactHero />

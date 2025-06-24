@@ -29,23 +29,23 @@ const ParticleBackground = () => {
       color: string;
     }> = [];
 
-    const colors = ['#60a5fa', '#a855f7', '#34d399', '#f59e0b'];
+    const colors = ['#3b82f6', '#6366f1', '#8b5cf6', '#10b981'];
 
     // Create particles
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 40; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        size: Math.random() * 3 + 1,
-        opacity: Math.random() * 0.5 + 0.1,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        size: Math.random() * 2 + 1,
+        opacity: Math.random() * 0.3 + 0.1,
         color: colors[Math.floor(Math.random() * colors.length)]
       });
     }
 
     const animate = () => {
-      ctx.fillStyle = 'rgba(15, 23, 42, 0.1)';
+      ctx.fillStyle = 'rgba(248, 250, 252, 0.05)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach(particle => {
@@ -65,7 +65,7 @@ const ParticleBackground = () => {
       });
 
       // Draw connections
-      ctx.strokeStyle = 'rgba(96, 165, 250, 0.1)';
+      ctx.strokeStyle = 'rgba(59, 130, 246, 0.08)';
       ctx.lineWidth = 1;
       particles.forEach((particle, i) => {
         particles.slice(i + 1).forEach(otherParticle => {
@@ -73,7 +73,7 @@ const ParticleBackground = () => {
             Math.pow(particle.x - otherParticle.x, 2) +
             Math.pow(particle.y - otherParticle.y, 2)
           );
-          if (distance < 100) {
+          if (distance < 120) {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);

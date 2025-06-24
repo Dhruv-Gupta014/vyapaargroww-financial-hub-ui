@@ -27,7 +27,7 @@ const Header = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'bg-black/20 backdrop-blur-xl border-b border-white/10' 
+          ? 'bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-lg' 
           : 'bg-transparent'
       }`}
     >
@@ -35,12 +35,12 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-all duration-300">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-all duration-300">
                 <TrendingUp size={24} className="text-white" />
               </div>
               <div className="absolute -inset-2 bg-gradient-to-r from-blue-400 to-purple-500 rounded-xl opacity-20 animate-pulse group-hover:opacity-40 transition-opacity duration-300"></div>
             </div>
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <div className="text-2xl font-bold bg-gradient-to-r from-slate-700 via-blue-700 to-indigo-700 bg-clip-text text-transparent">
               VyapaarGroww
             </div>
           </Link>
@@ -53,12 +53,12 @@ const Header = () => {
                 to={item.path}
                 className={`relative font-medium transition-all duration-300 group ${
                   location.pathname === item.path
-                    ? 'text-blue-400'
-                    : 'text-white/80 hover:text-white'
+                    ? 'text-blue-600'
+                    : 'text-slate-700 hover:text-blue-600'
                 }`}
               >
                 {item.name}
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 ${
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 transition-all duration-300 ${
                   location.pathname === item.path ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
               </Link>
@@ -67,7 +67,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white p-2"
+            className="md:hidden text-slate-700 p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -76,7 +76,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-white/20">
+          <nav className="md:hidden mt-4 pb-4 border-t border-slate-200">
             <div className="flex flex-col space-y-3 pt-4">
               {navItems.map((item) => (
                 <Link
@@ -85,8 +85,8 @@ const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`font-medium transition-colors duration-200 text-left ${
                     location.pathname === item.path
-                      ? 'text-blue-400'
-                      : 'text-white/80 hover:text-white'
+                      ? 'text-blue-600'
+                      : 'text-slate-700 hover:text-blue-600'
                   }`}
                 >
                   {item.name}
