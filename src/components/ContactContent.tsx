@@ -38,21 +38,21 @@ const ContactContent = () => {
       title: "Call Us",
       details: "+91 9876543210",
       action: "tel:+919876543210",
-      gradient: "from-blue-500 to-cyan-500"
+      gradient: "from-blue-600 to-indigo-600"
     },
     {
       icon: Mail,
       title: "Email Us",
       details: "info@vyapaargroww.com",
       action: "mailto:info@vyapaargroww.com",
-      gradient: "from-purple-500 to-pink-500"
+      gradient: "from-purple-600 to-pink-600"
     },
     {
       icon: MapPin,
       title: "Visit Us",
       details: "123 Business District, Mumbai, Maharashtra 400001",
       action: "#map",
-      gradient: "from-green-500 to-emerald-500"
+      gradient: "from-emerald-600 to-blue-600"
     }
   ];
 
@@ -82,22 +82,22 @@ const ContactContent = () => {
                 <a
                   key={index}
                   href={info.action}
-                  className="group flex items-center space-x-6 p-8 bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500 hover:scale-105"
+                  className="group flex items-center space-x-6 p-8 bg-white/90 backdrop-blur-xl rounded-3xl border border-gray-200 hover:border-gray-300 hover:bg-white transition-all duration-500 hover:scale-105 shadow-lg hover:shadow-xl"
                 >
-                  <div className={`w-16 h-16 bg-gradient-to-br ${info.gradient} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-2xl`}>
+                  <div className={`w-16 h-16 bg-gradient-to-br ${info.gradient} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg`}>
                     <info.icon size={28} className="text-white" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-xl text-white mb-1">{info.title}</h3>
-                    <p className="text-gray-300">{info.details}</p>
+                    <h3 className="font-bold text-xl text-gray-800 mb-1">{info.title}</h3>
+                    <p className="text-gray-600">{info.details}</p>
                   </div>
                 </a>
               ))}
             </div>
 
             {/* Social Media Links */}
-            <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
-              <h3 className="text-2xl font-bold mb-6 text-white">Connect With Us</h3>
+            <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 border border-gray-200 shadow-lg">
+              <h3 className="text-2xl font-bold mb-6 text-gray-800">Connect With Us</h3>
               <div className="flex gap-4">
                 {socialLinks.map((social, index) => (
                   <a
@@ -114,12 +114,12 @@ const ContactContent = () => {
             </div>
 
             {/* Enhanced Google Maps */}
-            <div id="map" className="bg-white/5 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+            <div id="map" className="bg-white/90 backdrop-blur-xl rounded-3xl overflow-hidden border border-gray-200 shadow-lg">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.9947532025815!2d72.82772081490213!3d19.041076087116836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9b3b6b1a1a1%3A0x1234567890abcdef!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
                 width="100%"
                 height="350"
-                style={{ border: 0, filter: 'invert(0.9) hue-rotate(180deg)' }}
+                style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -129,31 +129,31 @@ const ContactContent = () => {
           </div>
 
           {/* Enhanced Contact Form */}
-          <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
-            <h3 className="text-3xl font-bold mb-8 text-white">Send Us a Message</h3>
+          <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 border border-gray-200 shadow-lg">
+            <h3 className="text-3xl font-bold mb-8 text-gray-800">Send Us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-3">Name *</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-3">Name *</label>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm"
+                    className="w-full px-4 py-4 bg-white border border-gray-300 rounded-xl text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                     placeholder="Your full name"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-3">Email *</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-3">Email *</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm"
+                    className="w-full px-4 py-4 bg-white border border-gray-300 rounded-xl text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -161,38 +161,38 @@ const ContactContent = () => {
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-3">Phone</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-3">Phone</label>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm"
+                    className="w-full px-4 py-4 bg-white border border-gray-300 rounded-xl text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                     placeholder="+91 9876543210"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-3">Company</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-3">Company</label>
                   <input
                     type="text"
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm"
+                    className="w-full px-4 py-4 bg-white border border-gray-300 rounded-xl text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                     placeholder="Your company name"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-3">Message *</label>
+                <label className="block text-sm font-medium text-gray-700 mb-3">Message *</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none backdrop-blur-sm"
+                  className="w-full px-4 py-4 bg-white border border-gray-300 rounded-xl text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
                   placeholder="Tell us about your requirements..."
                 ></textarea>
               </div>

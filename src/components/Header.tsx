@@ -6,6 +6,7 @@ import { Link, useLocation } from 'react-router-dom';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [logoLoaded, setLogoLoaded] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -14,6 +15,13 @@ const Header = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Preload the logo to prevent flash
+  useEffect(() => {
+    const img = new Image();
+    img.onload = () => setLogoLoaded(true);
+    img.src = "/lovable-uploads/b3e763dd-390b-4fe0-9881-bc9a3ff798a2.png";
   }, []);
 
   const navItems = [
@@ -35,11 +43,15 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <img 
-                src="/lovable-uploads/b3e763dd-390b-4fe0-9881-bc9a3ff798a2.png" 
-                alt="VyapaarGroww Logo" 
-                className="w-12 h-12 object-contain transform group-hover:scale-110 transition-all duration-300"
-              />
+              {logoLoaded ? (
+                <img 
+                  src="/lovable-uploads/b3e763dd-390b-4fe0-9881-bc9a3ff798a2.png" 
+                  alt="VyapaarGroww Logo" 
+                  className="w-12 h-12 object-contain transform group-hover:scale-110 transition-all duration-300"
+                />
+              ) : (
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-green-500 rounded-lg animate-pulse"></div>
+              )}
               <div className="absolute -inset-2 bg-gradient-to-r from-blue-400 to-green-500 rounded-xl opacity-20 animate-pulse group-hover:opacity-40 transition-opacity duration-300"></div>
             </div>
             <div className="text-2xl font-bold text-slate-800">
