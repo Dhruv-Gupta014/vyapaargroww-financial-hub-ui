@@ -1,19 +1,21 @@
 
 import React from 'react';
 import Header from '../components/Header';
-import Hero from '../components/Hero';
+import ServicesHero from '../components/ServicesHero';
+import ServicesGrid from '../components/ServicesGrid';
 import Footer from '../components/Footer';
 import ParticleBackground from '../components/ParticleBackground';
 
-const Index = () => {
+const Services = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
       <ParticleBackground />
       <Header />
-      <Hero />
+      <ServicesHero />
+      <ServicesGrid />
       <Footer />
     </div>
   );
 };
 
-export default Index;
+export default Services;
