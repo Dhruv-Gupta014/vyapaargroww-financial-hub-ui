@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, TrendingUp } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
@@ -27,21 +27,24 @@ const Header = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-lg' 
-          : 'bg-transparent'
+          ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200/50 shadow-lg' 
+          : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-all duration-300">
-                <TrendingUp size={24} className="text-white" />
-              </div>
-              <div className="absolute -inset-2 bg-gradient-to-r from-blue-400 to-purple-500 rounded-xl opacity-20 animate-pulse group-hover:opacity-40 transition-opacity duration-300"></div>
+              <img 
+                src="/lovable-uploads/b3e763dd-390b-4fe0-9881-bc9a3ff798a2.png" 
+                alt="VyapaarGroww Logo" 
+                className="w-12 h-12 object-contain transform group-hover:scale-110 transition-all duration-300"
+              />
+              <div className="absolute -inset-2 bg-gradient-to-r from-blue-400 to-green-500 rounded-xl opacity-20 animate-pulse group-hover:opacity-40 transition-opacity duration-300"></div>
             </div>
-            <div className="text-2xl font-bold bg-gradient-to-r from-slate-700 via-blue-700 to-indigo-700 bg-clip-text text-transparent">
-              VyapaarGroww
+            <div className="text-2xl font-bold text-slate-800">
+              <span className="text-slate-700">Vyapaar</span>
+              <span className="text-green-600">Groww</span>
             </div>
           </Link>
           
@@ -53,12 +56,12 @@ const Header = () => {
                 to={item.path}
                 className={`relative font-medium transition-all duration-300 group ${
                   location.pathname === item.path
-                    ? 'text-blue-600'
-                    : 'text-slate-700 hover:text-blue-600'
+                    ? 'text-green-600'
+                    : 'text-slate-700 hover:text-green-600'
                 }`}
               >
                 {item.name}
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 transition-all duration-300 ${
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-green-600 to-blue-600 transition-all duration-300 ${
                   location.pathname === item.path ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
               </Link>
@@ -85,8 +88,8 @@ const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`font-medium transition-colors duration-200 text-left ${
                     location.pathname === item.path
-                      ? 'text-blue-600'
-                      : 'text-slate-700 hover:text-blue-600'
+                      ? 'text-green-600'
+                      : 'text-slate-700 hover:text-green-600'
                   }`}
                 >
                   {item.name}
